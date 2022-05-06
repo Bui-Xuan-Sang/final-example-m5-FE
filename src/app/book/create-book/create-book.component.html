@@ -1,0 +1,68 @@
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Thêm mới sách</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a routerLink="/books">Trang chủ</a></li>
+          <li class="breadcrumb-item active">Thêm mới sách</li>
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"></h3>
+          </div>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form [formGroup]="bookForm" (ngSubmit)="createBook()">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="title">Tên sản phẩm</label>
+                <input type="text" class="form-control"
+                       id="title"
+                       formControlName="title"
+                       placeholder="Nhập tên sách">
+              </div>
+              <div class="form-group">
+                <label for="author">Tác giả</label>
+                <input type="text" class="form-control"
+                       id="author"
+                       formControlName="author"
+                       placeholder="Nhập tên tác giả">
+              </div>
+              <div class="form-group">
+                <label for="description">Mô tả sách</label>
+                <textarea class="form-control"
+                       id="description"
+                       formControlName="description"
+                          placeholder="Nhập mô tả sản phẩm"></textarea>
+              </div>
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary float-right">Submit</button>
+            </div>
+          </form>
+        </div>
+        <!-- /.card -->
+
+      </div>
+      <!--/.col (right) -->
+    </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</section>

@@ -1,0 +1,61 @@
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Cập nhật sách</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a routerLink="/books">Trang chủ</a></li>
+          <li class="breadcrumb-item active">Cập nhật sách</li>
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-12">
+        <!-- general form elements -->
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Cập nhật sách</h3>
+          </div>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form  [formGroup]="bookForm" (ngSubmit)="submit()">
+            <div class="card-body">
+              <div class="form-group">
+                <label for="title">Tên sản phẩm</label>
+                <input type="text" class="form-control" id="title" formControlName="title"
+                       placeholder="Nhập tên sách">
+              </div>
+              <div class="form-group">
+                <label for="author">Tác giả</label>
+                <input type="text" class="form-control" id="author" formControlName="author"
+                       placeholder="Tác giả">
+              </div>
+              <div class="form-group">
+                <label for="description">Mô tả sản phẩm</label>
+                <textarea class="form-control" id="description" formControlName="description"
+                          [(ngModel)]="book.description" placeholder="Nhập mô tả sách"></textarea>
+              </div>
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary float-right">Cập nhật</button>
+            </div>
+          </form>
+        </div>
+        <!-- /.card -->
+      </div>
+      <!--/.col (left) -->
+    </div>
+    <!-- /.row -->
+  </div><!-- /.container-fluid -->
+</section>
